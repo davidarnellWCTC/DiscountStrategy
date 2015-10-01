@@ -1,0 +1,25 @@
+Discount Strategy Planning
+
+This file is for the ever changing plan for the Discount Strategy program.
+
+The Discount Strategy program uses the DIP method to create a receipt based on
+information gathered from a fake database class. The purpose is to print a
+receipt using a program dependant entirely on abstractions and based on the
+project requirements given in class.
+
+
+Objects:
+→ Register
+→ Customer
+→ Receipt
+→ Product
+→ Discount
+
+
+Basic-ish flow of the project
+
+REGISTER
+    The register creates a new sale by creating a new receipt with a new receipt 
+    number. Data is taken from a customer object through a custmer service and
+    added to the receipt to get the customer information. 
+    
