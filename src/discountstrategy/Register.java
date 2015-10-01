@@ -11,7 +11,21 @@ package discountstrategy;
  */
 public class Register {
     
-    // Make new Receipt Object
+    int receiptNo;
+    
+    public Register(){        
+        // If a new register object is being made I will assume a new receipt
+        // number will be used. Getters and setters are available if the starting
+        // receipt number should change.        
+        receiptNo = 1;
+    }
+    
+    // Start a new transaction and make new Receipt Object 
+    public void startTransaction(){
+        Receipt receipt = new Receipt(receiptNo);
+    }
+    
+    
     
     // Get Customer Info and Add to receipt
     
@@ -22,5 +36,15 @@ public class Register {
     // Print Receipt
     
     // Check for a new sale
+
+    public int getReceiptNo() {
+        return receiptNo;
+    }
+
+    public void setReceiptNo(int receiptNo) {
+        this.receiptNo = receiptNo;
+    }
+    
+    
     
 }

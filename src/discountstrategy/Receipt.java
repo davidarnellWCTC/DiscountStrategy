@@ -31,6 +31,10 @@ public class Receipt {
     public Receipt (int receiptNo){
         this.receiptNo = receiptNo;
     }
+    
+    public void buildReceipt(){
+        
+    }
             
     
     // Receipt will output:

@@ -10,7 +10,11 @@ package discountstrategy;
  * @author David
  */
 public interface ICustomer {
+        
+    public abstract String getCustId();
+    public abstract void setCustId(String custId);
     
-    public String getCustId();
+    public abstract String getCustName();
+    public abstract void setCustName(String custName);
     
 }

@@ -7,14 +7,12 @@ package discountstrategy;
 
 /**
  *
- * @author David
+ * @author darnell
  */
-public class LineItem {
-    // The LineItem has a Product
+public class DatabaseAccessStrategy {
     
-    public LineItem(){
-        
-    }
+    ReceiptDataAccessStrategy database = new FakeDatabase();
+    
     
     
 }
