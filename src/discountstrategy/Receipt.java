@@ -14,6 +14,25 @@ public class Receipt {
     // This class will be the object that gets assembled and put out by the 
     // register
     
+    // The receipt doesn't have products or discounts, it has LineItems.
+    LineItem lineItem;
+    
+    // Message at the top of each receipt
+    private String Message = "Thank you for Shopping at Kohls";
+    
+    // information on the Customer retreived from the Customer Object
+    private String custID, custName;
+    
+    // The receipt number is passed into the Receipt object when the receipt is created
+    private int receiptNo;
+    
+    // Constructor for the Receipt object
+    // When the receipt is created a new receipt number is issued
+    public Receipt (int receiptNo){
+        this.receiptNo = receiptNo;
+    }
+            
+    
     // Receipt will output:
     // Message → Thank you for shoing at Kohls
     // Customer Name → Customer Name retrieved from Customer Object

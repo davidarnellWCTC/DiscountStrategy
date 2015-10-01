@@ -17,9 +17,28 @@ Objects:
 
 
 Basic-ish flow of the project
+This will all change.
 
 REGISTER
     The register creates a new sale by creating a new receipt with a new receipt 
-    number. Data is taken from a customer object through a custmer service and
+    number. Data is taken from a customer object through a customer service and
     added to the receipt to get the customer information. 
+    A product service retrieves information on each product and creates a line item.
+    The line item is passed to the receipt.
+
+RECEIPT
+    The receipt receives the customer info and the line item information.
+    The LineItem objects are added to an array of line item objects
+
+LINEITEM
+    The LineItem contains the product objects as well as the identifier for each
+    line item. The LineItem objects are stored in an array held by the receipt.
+
+PRODUCT
+    The Product object holds the info for each item the customer purchases
+    The discount on each product is calculated through a DiscountStrategy
+
+DISCOUNTSTRATEGY
+    The discount strategy contains the shared methods for each format of each type
+    of discount that gets applied.
     
