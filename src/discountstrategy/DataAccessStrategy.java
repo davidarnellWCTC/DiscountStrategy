@@ -9,7 +9,7 @@ package discountstrategy;
  *
  * @author David
  */
-public interface ReceiptDataAccessStrategy {
+public interface DataAccessStrategy {
 
     /**
      * Tries to find a Customer by customer id.
@@ -19,7 +19,7 @@ public interface ReceiptDataAccessStrategy {
     ICustomer findCustomer(final String custId);
 
     /**
-     * Tries to find a Proudct by product id.
+     * Tries to find a Product by product id.
      * @param prodId - must not be null or empty
      * @return found Product or null if not found or bad argument
      */

@@ -18,7 +18,8 @@ public class Receipt {
     LineItem lineItem;
     
     // Message at the top of each receipt
-    private String Message = "Thank you for Shopping at Kohls";
+    private String receiptHeaderMessage = "Thank you for Shopping at Kohls";
+    private String receiptFooterMessage = "Thank you for shopping, please come again";
     
     // information on the Customer retreived from the Customer Object
     private String custID, custName;
@@ -26,15 +27,48 @@ public class Receipt {
     // The receipt number is passed into the Receipt object when the receipt is created
     private int receiptNo;
     
+    // the receipt has these values, not the products or line items
+    private double netTotal;
+    private double totalSaved;
+    private double totalDue;
+    
     // Constructor for the Receipt object
     // When the receipt is created a new receipt number is issued
-    public Receipt (int receiptNo){
+    public Receipt (int receiptNo, String custID, String custName){
+        this.custID = custID;
+        this.custName = custName;
         this.receiptNo = receiptNo;
         buildReceipt();
+        
+        // testing receipt output
+        testReceipt();
     }
     
     public void buildReceipt(){
+        printHeaderOnReceipt();
         
+        
+    }
+    
+    public void printHeaderOnReceipt(){
+        
+        //String time = get time toString();
+        //String date = get date toString();
+        
+        System.out.println(receiptHeaderMessage);
+        System.out.println();
+        System.out.println("Sold to: " + custName);
+        System.out.println("Date of Sale: mm/dd/yy at xx:xx am/pm" /*get date*/);
+        // figure out how to format line item display
+        System.out.println("ID     Item         Price     Quantity     Subtotal     Discount    Total");
+    }
+    
+    public void printLineItemsOnReciept(){
+        
+    }
+    
+    public void printFooterOnReceipt(){
+        System.out.println(receiptFooterMessage);
     }
             
     
@@ -66,5 +100,9 @@ public class Receipt {
 //        tempItems[lineItems.length] = item;
 //        lineItems = tempItems;
 //    }
+    
+    public void testReceipt(){
+        
+    }
     
 }

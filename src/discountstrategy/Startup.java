@@ -20,7 +20,17 @@ public class Startup {
         //int receiptStartingNumber = 1;
         
         // Create new Register and initialize receipt number
+        // The receipt number starts out at 0
+        // When a new receipt is made in the register, the number increases
         Register register = new Register();
+        
+        
+        
+        // create a bunch of sales to pass into the register for transactions.
+        
+//        DatabaseAccessStrategy[] transactions = new {
+//        
+//    }
         
         // Run Register transaction/sales until no more customers
         // for each customer run new transaction

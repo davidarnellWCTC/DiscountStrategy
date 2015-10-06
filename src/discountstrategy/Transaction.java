@@ -9,10 +9,8 @@ package discountstrategy;
  *
  * @author darnell
  */
-public class DatabaseAccessStrategy {
-    
-    DataAccessStrategy database = new FakeDatabase();
-    
-    
+public class Transaction {
+    // get customer object
+    // get array of products and quantities
     
 }

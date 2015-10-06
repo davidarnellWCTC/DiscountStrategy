@@ -25,7 +25,7 @@ public class Product {
         this.unitPrice = unitPrice;
     }
     
-    public double getDiscountAmt(double qty){
+    public double getDiscountAmtOffPrice(double qty){
         return discount.getDiscountAmt(unitPrice, qty);
     }
 

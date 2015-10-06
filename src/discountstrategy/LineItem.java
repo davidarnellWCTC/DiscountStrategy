@@ -27,13 +27,16 @@ public class LineItem {
         this.product = product;
         this.qty = qty;
         this.unitPrice = product.getUnitPrice();        
-        discountAmount = product.getDiscountAmt(qty);
+        discountAmount = product.getDiscountAmtOffPrice(qty);
         itemTotal = (qty * unitPrice) - discountAmount;
     }    
     //discountAmount = product.getDiscountAmt(qty);
     
     // Method to get line item
     
+    public void setName(){
+        name = product.getName();
+    }
     
 
     public String getProdId() {
@@ -44,13 +47,13 @@ public class LineItem {
         this.prodId = prodId;
     }
 
-    public String getName() {
-        return name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
-    }
+//    public String getName() {
+//        return name;
+//    }
+//
+//    public void setName(String name) {
+//        this.name = name;
+//    }
 
     public double getQty() {
         return qty;
