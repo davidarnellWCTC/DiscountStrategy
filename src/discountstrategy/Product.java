@@ -14,6 +14,7 @@ public class Product {
     private String prodId;
     private String name;
     private double unitPrice;
+    private double discountAmount;
     
     private DiscountStrategy discount;
 
@@ -53,6 +54,8 @@ public class Product {
     }
     
     
+    
+    
     // Start psvm used for testing in class 9/29/2015
     
 //    public static void main(String[] args) {
@@ -61,5 +64,21 @@ public class Product {
 //        double amt = product.getDiscountAmt(2);
 //        System.out.println("Expected discount in the amount of 0.0 and got: " + amt);
 //    }
+
+    public double getUnitPrice() {
+        return unitPrice;
+    }
+
+    public void setUnitPrice(double unitPrice) {
+        this.unitPrice = unitPrice;
+    }
+
+    public double getDiscountAmount() {
+        return discountAmount;
+    }
+
+    public void setDiscountAmount(double discountAmount) {
+        this.discountAmount = discountAmount;
+    }
     
 }

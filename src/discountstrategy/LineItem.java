@@ -10,11 +10,94 @@ package discountstrategy;
  * @author David
  */
 public class LineItem {
-    // The LineItem has a Product
+    // The LineItem has the product data
+    private String prodId;
+    private String name;
+    private double qty;
+    private double unitPrice;
+    private double subTotal;
+    private double discountAmount;
+    private double itemTotal;
     
-    public LineItem(){
-        
+    // The line item has a product
+    // but the product has the discount
+    Product product;
+    
+    public LineItem(Product product, double qty){
+        this.product = product;
+        this.qty = qty;
+        this.unitPrice = product.getUnitPrice();        
+        discountAmount = product.getDiscountAmt(qty);
+        itemTotal = (qty * unitPrice) - discountAmount;
+    }    
+    //discountAmount = product.getDiscountAmt(qty);
+    
+    // Method to get line item
+    
+    
+
+    public String getProdId() {
+        return prodId;
     }
-    
+
+    public void setProdId(String prodId) {
+        this.prodId = prodId;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public double getQty() {
+        return qty;
+    }
+
+    public void setQty(double qty) {
+        this.qty = qty;
+    }
+
+    public double getUnitPrice() {
+        return unitPrice;
+    }
+
+    public void setUnitPrice(double unitPrice) {
+        this.unitPrice = unitPrice;
+    }
+
+    public double getSubTotal() {
+        return subTotal;
+    }
+
+    public void setSubTotal(double subTotal) {
+        this.subTotal = subTotal;
+    }
+
+    public double getDiscountAmount() {
+        return discountAmount;
+    }
+
+    public void setDiscountAmount(double discountAmount) {
+        this.discountAmount = discountAmount;
+    }
+
+    public double getItemTotal() {
+        return itemTotal;
+    }
+
+    public void setItemTotal(double itemTotal) {
+        this.itemTotal = itemTotal;
+    }
+
+    public Product getProduct() {
+        return product;
+    }
+
+    public void setProduct(Product product) {
+        this.product = product;
+    }
     
 }

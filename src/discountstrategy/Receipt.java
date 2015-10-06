@@ -30,6 +30,7 @@ public class Receipt {
     // When the receipt is created a new receipt number is issued
     public Receipt (int receiptNo){
         this.receiptNo = receiptNo;
+        buildReceipt();
     }
     
     public void buildReceipt(){
