@@ -17,6 +17,9 @@ public class Receipt {
     // The receipt doesn't have products or discounts, it has LineItems.
     LineItem lineItem;
     
+    DataAccessStrategy database;
+    ICustomer customer;
+    
     // Message at the top of each receipt
     private String receiptHeaderMessage = "Thank you for Shopping at Kohls";
     private String receiptFooterMessage = "Thank you for shopping, please come again";
@@ -30,46 +33,99 @@ public class Receipt {
     // the receipt has these values, not the products or line items
     private double netTotal;
     private double totalSaved;
-    private double totalDue;
+    private double totalDue;    
+    private LineItem[] lineItems;
     
     // Constructor for the Receipt object
     // When the receipt is created a new receipt number is issued
-    public Receipt (int receiptNo, String custID, String custName){
+    public Receipt (int receiptNo, String custID){
         this.custID = custID;
-        this.custName = custName;
+        this.customer = database.findCustomer(custID);
+        this.custName = customer.getCustName();
         this.receiptNo = receiptNo;
-        buildReceipt();
-        
+        //buildReceipt();
+        lineItems = new LineItem[0];
+        //LineItem[] lineItem = new LineItem[0];
+        //String[][] outPutLineItem = new String[0][7];
         // testing receipt output
-        testReceipt();
+        //testReceipt();
     }
     
-    public void buildReceipt(){
-        printHeaderOnReceipt();
+    public void addProductToSale(String prodId, double qty){
+        // get the product info and the quantity and add it to the
+        // line item output
         
+        //int test = lineItems.length;
+        
+//        for (int i = 0; i <= lineItem.length; i++){
+//            
+//        }
+        private void addToArray(final LineItem item){
+            LineItem[] tempItems = new LineItem[lineItems.length +1];
+            System.arraycopy(lineItem, 0, tempItems, 0, lineItems.length);
+            tempItems[lineItems.length] = item;
+            lineItems = tempItems;
+        }        
+        //    private void addToArray(final LineItem item) {
+//        // needs validation
+//        LineItem[] tempItems = new LineItem[lineItems.length + 1];
+//        System.arraycopy(lineItems, 0, tempItems, 0, lineItems.length);
+//        tempItems[lineItems.length] = item;
+//        lineItems = tempItems;
+//    }
         
     }
+
+//public final void addLineItem(final String prodId, final int qty) {
+//        // needs validation
+//        LineItem item = new LineItem(db, prodId, qty);
+//        addToArray(item);
+//    }
+//    
+//    private void addToArray(final LineItem item) {
+//        // needs validation
+//        LineItem[] tempItems = new LineItem[lineItems.length + 1];
+//        System.arraycopy(lineItems, 0, tempItems, 0, lineItems.length);
+//        tempItems[lineItems.length] = item;
+//        lineItems = tempItems;
+//    }
     
-    public void printHeaderOnReceipt(){
-        
-        //String time = get time toString();
-        //String date = get date toString();
-        
-        System.out.println(receiptHeaderMessage);
-        System.out.println();
-        System.out.println("Sold to: " + custName);
-        System.out.println("Date of Sale: mm/dd/yy at xx:xx am/pm" /*get date*/);
-        // figure out how to format line item display
-        System.out.println("ID     Item         Price     Quantity     Subtotal     Discount    Total");
-    }
+//    public void printReceiptToConsole(){
+//        ReceiptOutputStrategy receiptOutput = new ReceiptConsoleOutput();
+//    }
+//    
+//    
+//    public void outputReceipt(){
+//        //receiptOutput.print();
+//    }
     
-    public void printLineItemsOnReciept(){
-        
-    }
-    
-    public void printFooterOnReceipt(){
-        System.out.println(receiptFooterMessage);
-    }
+//    private void buildReceipt(){
+//        ReceiptConsoleOutput receiptOutput = new 
+//    }
+//    public void buildReceipt(){
+//        printHeaderOnReceipt();        
+//    }
+//    
+//    public void printHeaderOnReceipt(){
+//        
+//        //String time = get time toString();
+//        //String date = get date toString();
+//        
+//        System.out.println(receiptHeaderMessage);
+//        System.out.println();
+//        System.out.println("Sold to: " + custName);
+//        System.out.println("Date of Sale: mm/dd/yy at xx:xx am/pm" /*get date*/);
+//        // figure out how to format line item display
+//        System.out.println("ID     Item         Price     Quantity     Subtotal     Discount    Total");
+//    }
+//    
+//    public void printLineItemsOnReciept(){
+//        
+//    }
+//    
+//    public void printFooterOnReceipt(){
+//        System.out.println(receiptFooterMessage);
+//    }
             
     
     // Receipt will output:

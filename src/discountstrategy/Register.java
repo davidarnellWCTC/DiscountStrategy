@@ -11,10 +11,12 @@ package discountstrategy;
  */
 public class Register {
     
-    int receiptNo;
+    private Receipt receipt;
     
-    String custID;
-    String custName;
+    private int receiptNo;
+    
+    private String custID;
+    private String custName;
     
     public Register(){        
         // If a new register object is being made I will assume a new receipt
@@ -31,7 +33,11 @@ public class Register {
         // after the receipt is made the next receipt number needs to be
         // increased after the last receipt number or for the first receipt
         receiptNumberIncrease();
-        Receipt receipt = new Receipt(receiptNo, custID, custName);        
+        receipt = new Receipt(receiptNo, custID);        
+    }
+    
+    public void addProductToSale(String prodId, double qty){
+        receipt.addProductToSale(prodId, qty);
     }
     
     public void completeTransation(){

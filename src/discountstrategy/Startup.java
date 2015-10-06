@@ -24,7 +24,17 @@ public class Startup {
         // When a new receipt is made in the register, the number increases
         Register register = new Register();
         
+        register.newTransaction("100");
+        register.addProductToSale("A101", 5);
+        register.addProductToSale("B205", 3);
+        register.completeTransation();
         
+        
+//        private Product[] products = {
+//        new Product("A101", "MLB Brewer's Hat ", 19.95, new PercentOffDiscount(0.15)),
+//        new Product("B205", "Men's Dress Shirt", 35.50, new QuantityDiscount(.10,5)),
+//        new Product("C222", "Women's Socks    ", 9.50, new NoDiscount())
+//    };
         
         // create a bunch of sales to pass into the register for transactions.
         
