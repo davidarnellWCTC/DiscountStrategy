@@ -10,7 +10,15 @@ package discountstrategy;
  * @author darnell
  */
 public class ReceiptConsoleOutput implements ReceiptOutputStrategy {
-   
+    
+    DataAccessStrategy db = new FakeDatabase();
+    
+    private double netTotal;
+    private double totalSaved;
+    private double totalDue;
+    
+    ICustomer customer;
+    private String custName;
 //    Register register;
 //    
 //    public ReceiptConsoleOutput(Register r){
@@ -21,10 +29,14 @@ public class ReceiptConsoleOutput implements ReceiptOutputStrategy {
 //        printHeaderOnReceipt();        
 //    }
     
-    public void printHeaderOnReceipt(String message, String custName, int recieptNo){
+    public void printHeaderOnReceipt(String message, String custId, int recieptNo){
         
         //String time = get time toString();
         //String date = get date toString();
+        
+        this.customer = db.findCustomer(custId);
+        
+        this.custName = customer.getCustName();
         
         System.out.println(message);//print message
         System.out.println();

@@ -14,7 +14,7 @@ public class Receipt {
     // This class will be the object that gets assembled and put out by the 
     // register
     // The receipt doesn't have products or discounts, it has LineItems.
-    private LineItem lineItem;
+    //private LineItem lineItem;
 
     private DataAccessStrategy db;
     private ICustomer customer;
@@ -65,9 +65,11 @@ public class Receipt {
         LineItem item = new LineItem(prodId, qty);
 
         LineItem[] tempItems = new LineItem[lineItems.length + 1];
-        System.arraycopy(lineItem, 0, tempItems, 0, lineItems.length);
+        System.arraycopy(lineItems, 0, tempItems, 0, lineItems.length);
         tempItems[lineItems.length] = item;
         lineItems = tempItems;
+        
+        //System.arraycopy(qty, receiptNo, db, receiptNo, receiptNo);
     }
 
     public void completeTransation() {
