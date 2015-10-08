@@ -10,7 +10,7 @@ package discountstrategy;
  * @author David
  */
 public class Customer implements ICustomer {
-    
+
     private String custId;
     private String custName;
 
@@ -18,38 +18,32 @@ public class Customer implements ICustomer {
         this.custId = customerNumber;
         this.custName = custName;
     }
-    
-    
+
 //    public String getCustId(){
 //        return custId;
 //    }
-
     @Override
     public String getCustId() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        return custId;
     }
 
     @Override
-    public void setCustId (String custId) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    public void setCustId(String custId) {
+        this.custId = custId;
     }
 
     @Override
     public String getCustName() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        return custName;
     }
 
     @Override
     public void setCustName(String custName) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        this.custName = custName;
     }
-    
-    //
-    //
-    //
-    //
 
-    
-    
-    
+    //
+    //
+    //
+    //
 }

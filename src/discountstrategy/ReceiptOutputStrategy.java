@@ -11,4 +11,10 @@ package discountstrategy;
  */
 public interface ReceiptOutputStrategy {
     
+    public abstract void printHeaderOnReceipt(String receiptHeaderMessage, String custID, int recieptNo);
+    
+    public void printLineItemsOnReciept(LineItem[] lineItems);
+    
+    public void printFooterOnReceipt(String receiptFooterMessage);
+    
 }

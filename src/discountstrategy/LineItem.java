@@ -21,12 +21,21 @@ public class LineItem {
     
     // The line item has a product
     // but the product has the discount
-    Product product;
+    private Product product;
+    private DataAccessStrategy db = new FakeDatabase();
     
-    public LineItem(Product product, double qty){
-        this.product = product;
+    public LineItem(String prodId, double qty){
+        
+        //db = new FakeDatabase();
+        
+        //this.product = product;
+        this.prodId = prodId;
         this.qty = qty;
-        this.unitPrice = product.getUnitPrice();        
+        
+        product = db.findProduct(prodId);
+        
+        this.unitPrice = product.getUnitPrice();   
+        this.name = product.getName();
         discountAmount = product.getDiscountAmtOffPrice(qty);
         itemTotal = (qty * unitPrice) - discountAmount;
     }    
@@ -47,13 +56,13 @@ public class LineItem {
         this.prodId = prodId;
     }
 
-//    public String getName() {
-//        return name;
-//    }
-//
-//    public void setName(String name) {
-//        this.name = name;
-//    }
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
 
     public double getQty() {
         return qty;

@@ -41,7 +41,7 @@ public class Register {
     }
     
     public void completeTransation(){
-        
+        receipt.completeTransation();
     }
     
     public void receiptNumberIncrease(){
